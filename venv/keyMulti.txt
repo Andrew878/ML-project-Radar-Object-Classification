@@ -1,0 +1,1 @@
+{0: 'air', 1: 'book', 2: 'hand', 3: 'knife', 4: 'plastic case'}
