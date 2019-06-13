@@ -59,27 +59,37 @@ Per guidance in Kittler et al, combinations of classifiers are “particularly u
 Logistic regression:
 
  • Provides linear decision boundaries and so for linearly separable data, this approach should work well.
+ 
  • Takes the entire dataset into consideration when creating decision boundaries. 
- • Because “logistic regression wants to create a large margin between boundary and (all of) the data”, it can result in decision boundaries tilting in odd angles to accommodate outliers near the decision boundary (Minka, 2003)⁠ .
+ 
+ • Because “logistic regression wants to create a large margin between boundary and (all of) the data”, it can result in decision boundaries tilting in odd angles to accommodate outliers near the decision boundary (Minka, 2003)⁠.
 
 Gradient Boosted Trees:
 
  • The GBT model is itself an ensemble learner that gradually adds and trains multiple decision-tree models where each incremental tree is trained on the residuals of the prior tree. It is somewhat similar to forward stage-wise liner regression (Hastie et al, Chapter 4) in the sense that the models next tree is determined by the residuals of the model’s prior iteration.
+ 
  • Tree methods such as GBT are robust to outliers (Hastie, Tibshirani, & Friedman, 2008)⁠.
+ 
  • The combination of these trees will produce linear decision boundaries that are orthogonal to the PCA axes. This will be different to the decision boundaries of the other models.
+ 
  • Lastly, it is difficult to ignore that GBT approaches tend to feature in many winning data-science entries such as Kaggle and the Netflix Prize (Koren, 2009)⁠. 
 
 K-Nearest Neighbour:
 
  • KNN is a probabilistic classifier that formulates classifications based on the ‘K’ closest data points and nothing more (in this sense, the ‘K’ majority voting system shares similarities to an ensemble classifier). 
+ 
  • Per Hastie et al, KNN’s produces piece-wise linear decision boundaries which can be used to represent “irregular” and non-linear class boundaries (Hastie et al., 2008)⁠. 
+ 
  • Hastie et al also details how KNN are successful in many real world applications including electrocardiography signals. From my naive perspective, pictures of electrocardiography waves don’t look dissimilar to the waveforms in the RadarCat article. This leads me to believe KNN could be worth attempting.
+ 
  • Russell and Norvig also note that “in low-dimensional spaces with plenty of data, nearest neighbours works very well”(Russell & Norvig, 2016)⁠. Due to the curse of dimensionality, KNN might have been infeasible in the original, larger feature set, but with the smaller PCA features, the data-to-feature ratio is much higher, and so there is a possibility it will perform well. 
+ 
  • Unfortunately, as the size of the data set gets very large, KNN will take longer and longer to classify (as it calculates the distance from every data point) but given the small data set, it is sufficient.
 
 Neural network:
 
  • NN’s can represent complex non-linear decision boundaries between classes and work well in instances where there is high-signal-to-noise ratios (Hastie et al., 2008)⁠.
+ 
  • NN’s are well suited to classification tasks, particularly when “modelling real world complex relationships” (G. P. Zhang, 2000)⁠ (which this problem is considered as).
     
     
