@@ -4,7 +4,8 @@ EXECUTIVE SUMMARY:
 
 A master's machine learning project that classifies objects/materials based on how they interact with radar signals. 
 
-Within the provided python scripts there are: 
+Within the provided python scripts there are:
+
 ◦ The training and calibration of four classification models:
         
  ▪ Logistic Regression;
